@@ -35,7 +35,7 @@ void LM251772::setVoltage(float voltage) {
     _Wire->beginTransmission(_adr);
     _Wire->write(0x0C);
     _Wire->write((byte) toSend);
-    _Wire->write((byte) toSend >> 8);
+    _Wire->write((byte) (toSend >> 8));
 }
 
 byte LM251772::status() {
