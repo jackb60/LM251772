@@ -31,7 +31,7 @@ void LM251772::clearFaults() {
 }
 
 void LM251772::setVoltage(float voltage) {
-    int toSend = voltage / 0.02;
+    unsigned int toSend = voltage / 0.02;
     _Wire->beginTransmission(_adr);
     _Wire->write(0x0C);
     _Wire->write((byte) toSend);
