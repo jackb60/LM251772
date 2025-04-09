@@ -1,7 +1,7 @@
 #include "LM251772.h"
 #include "Wire.h"
 
-LM251772 lm(PB0);
+LM251772 lm(PB0, 0x6A);
 
 void setup() {
   // put your setup code here, to run once:
