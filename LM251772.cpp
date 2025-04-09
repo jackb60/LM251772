@@ -2,9 +2,10 @@
 #include "LM251772.h"
 #include "Wire.h"
 
-LM251772::LM251772(byte adc, TwoWire* wire) {
+LM251772::LM251772(byte adc, byte adr, TwoWire* wire) {
     _Wire = wire;
     _adc = adc;
+    _adr = adr;
 }
 
 void LM251772::begin() {
