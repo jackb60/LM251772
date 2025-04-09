@@ -3,7 +3,7 @@
 
 class LM251772 {
     public:
-        LM251772(byte adc, TwoWire* wire = &Wire);
+        LM251772(byte adc, byte adr, TwoWire* wire = &Wire);
         void begin();
         void clearFaults();
         void setVoltage(float voltage);
@@ -12,8 +12,8 @@ class LM251772 {
         float current();
     private:
         TwoWire* _Wire;
-        byte _adr = 0x6A;
         byte _adc;
+        byte _adr;
         void _writeReg(byte reg, byte data);
         byte _readReg(byte reg);
 };
